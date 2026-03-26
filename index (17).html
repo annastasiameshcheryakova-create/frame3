@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body>
+    <a-scene vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: true; debug:false ; ">
+        <a-marker preset="kanji" >
+              <a-sphere
+              radius="1" 
+              color="black" 
+              position="0 0 0"
+              ></a-sphere>
+        </a-marker>
+    <a-marker type="pattern" url="pattern.patt" 
+    >
+     <a-box color="green"></a-box>
+    </a-marker>
+    <a-marker preset="hiro" >  
+               <a-entity scale="0.2 0.2 0.2" rotation="-90 0 0" position="0 0 0">
+        <a-torus position="-2 1 -5" color="green" radius="1.2"
+        animation="property: components.material.material.color; type: color; from: green; to: white; loop: true; dur: 10000">
+        </a-torus>
+        
+        <a-plane width="7" height="7" rotation="-55 0 0" position="-2 -2 -5" color="purple"
+        src="Timoshka.sigma.jpg"></a-plane>
+        
+        <a-cylinder color="yellow" height="2" radius="0.05" position="-2 -1 -5"></a-cylinder>
+        <a-cylinder color="blue" height="2" radius="0.05" position="-3 -1 -5"></a-cylinder>
+        
+        <a-torus-knot color="orange" radius="1.2" position="-3 1 -5" src="FENEK.PNG.webp"
+        animation="property: rotation; to: 0 0 360; loop: true; dur: 10000"></a-torus-knot>
+        
+        <a-entity position="1 3 -5" animation="property: rotation; to: 540 360 720; loop: true; dur: 10000">
+            <a-sphere radius="1" src="fenek.png"></a-sphere>
+            <a-cylinder color="yellow" height="3" radius="0.05"></a-cylinder>
+        </a-entity>
+        <a-plane width="10" height="5" position="3 3 -10" color="" src="okno.png"></a-plane>
+        <a-gltf-model src="little_cat.glb" position="3 0 -5" rotation="0 185 0"
+        animation="property: scale; delay: 7000; from: 1 1 1; to: 4 4 4; loop: true; dur: 30000"
+        ></a-gltf-model>
+         </a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
